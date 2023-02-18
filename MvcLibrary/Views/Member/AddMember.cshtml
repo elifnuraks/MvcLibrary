@@ -1,0 +1,60 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Members
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Name</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NAME, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Surname</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.SURNAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SURNAME, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Mail Address</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.MAIL, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Username</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.USERNAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.USERNAME, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Password</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.PASSWORD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PASSWORD, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Image</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.IMAGE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.IMAGE, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Telephone</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.TELEPHONE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TELEPHONE, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <label>School</label>
+        @*<input type="text" class="form-control" name="MEMBER" />*@
+        @Html.TextBoxFor(x => x.SCHOOL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SCHOOL, "", new { @style = "color:forestgreen" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">Add Member</button>
+    </div>
+</form>

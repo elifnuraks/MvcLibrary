@@ -1,0 +1,29 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<tbl_Employees>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>EMPLOYEES</h2>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>EMPLOYEE ID</th>
+        <th>EMPLOYEE NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var prs in Model)
+    {
+        <tr>
+            <td>@prs.ID</td>
+            <td>@prs.EMPLOYEE</td>
+            <td><a href="/Employee/EmployeeDelete/@prs.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Employee/EmployeeBring/@prs.ID" class="btn btn-success">Update</a></td>
+
+        </tr>
+
+    }
+
+</table>
+<a href="/Employee/AddEmployee/" class="btn btn-primary">Add New Employee</a>

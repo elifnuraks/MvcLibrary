@@ -1,0 +1,24 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Employees
+@{
+    ViewBag.Title = "EmployeeBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("EmployeeUpdate", "Employee", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.ID)
+        @Html.TextBoxFor(c => c.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(c=>c.NAME)*@
+        <label>EMPLOYEE NAME</label>
+        @Html.TextBoxFor(c => c.EMPLOYEE, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+
+

@@ -1,0 +1,38 @@
+﻿@using MvcLibrary.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<tbl_Members>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>MEMBERS</h2>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252,178,22)">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>SCHOOL</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+        <th>BOOK HİSTORY</th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+        <tr>
+            <td>@uye.ID</td>
+            <td>@uye.NAME</td>
+            <td>@uye.SURNAME</td>
+            <td>@uye.SCHOOL</td>
+            <td><a href="/Member/MemberDelete/@uye.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Member/MemberBring/@uye.ID" class="btn btn-success">Update</a></td>
+            <td><a href="/Member/MemberBookHistory/@uye.ID" class="btn btn-success" style="background-color:lightseagreen">Book History</a></td>
+
+        </tr>
+
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+<a href="/Member/AddMember/" class="btn btn-primary">Add New Member</a>

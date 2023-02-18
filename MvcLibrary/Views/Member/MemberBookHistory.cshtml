@@ -1,0 +1,28 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<tbl_Movements>
+@{
+    ViewBag.Title = "MemberBookHistory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Member : @ViewBag.u1</h2>
+<br />
+<table class="table table-danger">
+    <tr>
+        <th>Book Name</th>
+        <th>Employee</th>
+        <th>Purchase Date</th>
+        <th>Return Date</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.tbl_Books.NAME</td>
+                    <td>@x.tbl_Employees.EMPLOYEE</td>
+                    <td>@Convert.ToDateTime(x.PURCHASE_DATE).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(x.RECEIVED_DATE).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+
+</table>
+

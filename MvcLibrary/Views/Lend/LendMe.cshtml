@@ -1,0 +1,38 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Movements
+@{
+    ViewBag.Title = "LendMe";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Member ID</label>
+        @*@Html.TextBoxFor(k => k.MEMBER, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.tbl_Members.ID, (List<SelectListItem>) ViewBag.dgr1, new {@class = "form-control"})
+    </div>
+    <div style="margin-top:15px">
+        <label>Book ID</label>
+        @*@Html.TextBoxFor(k => k.BOOK, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.tbl_Books.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Employee ID</label>
+        @*@Html.TextBoxFor(k => k.EMPLOYEE, new { @class = "form-control" })*@
+                @Html.DropDownListFor(k => k.tbl_Employees.ID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Purchase Date</label>
+        <input type="text" class="form-control" name="PURCHASE_DATE" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Return Date</label>
+        <input type="text" class="form-control" name="RETURN_DATE" value="@DateTime.Now.AddDays(7).ToShortDateString()"/>
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color: #808080; color: white">Lend Me Book</button>
+        <input type="hidden" value="False" name="PROCESS"/>
+    </div>
+
+</form>

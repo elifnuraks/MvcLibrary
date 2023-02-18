@@ -1,0 +1,39 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Movements
+@{
+    ViewBag.Title = "ReturnTheBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("LendUpdate", "Lend", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.ID)
+        @Html.TextBoxFor(c => c.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(c=>c.NAME)*@
+        <label>Book Name</label>
+        @Html.TextBoxFor(c => c.tbl_Books.NAME, new { @class = "form-control" })
+        <br />
+        <label>Member</label>
+        @Html.TextBoxFor(c => c.tbl_Members.NAME, new { @class = "form-control" })
+        <br />
+        <label>Employee</label>
+        @Html.TextBoxFor(c => c.tbl_Employees.EMPLOYEE, new { @class = "form-control" })
+        <br />
+        <label>Purchase Date</label>
+        @Html.TextBoxFor(c => c.PURCHASE_DATE, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Return Date</label>
+        @Html.TextBoxFor(c => c.RETURN_DATE, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Received Date</label>
+        <input type="text" class="form-control" name="RECEIVED_DATE" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Number of Lend Books Delivered Late</label>
+        <input type="text" class="form-control" id="late" value="@ViewBag.dgr"/>
+    </div>
+    <div>
+        <button class="btn btn-group" style="background-color: #808080; color: white">Return The Lended Book</button>
+    </div>
+}

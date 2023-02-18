@@ -1,0 +1,43 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Members
+@{
+    ViewBag.Title = "MemberBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("MemberUpdate", "Member", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.ID)
+        @Html.TextBoxFor(c => c.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(c=>c.NAME)*@
+        <label>MEMBER NAME</label>
+        @Html.TextBoxFor(c => c.NAME, new { @class = "form-control" })
+        <br />
+        <label>MEMBER SURNAME</label>
+        @Html.TextBoxFor(c => c.SURNAME, new { @class = "form-control" })
+        <br />
+        <label>USERNAME</label>
+        @Html.TextBoxFor(c => c.USERNAME, new { @class = "form-control" })
+        <br />
+        <label>PASSWORD</label>
+        @Html.TextBoxFor(c => c.PASSWORD, new { @class = "form-control" })
+        <br />
+        <label>MAIL ADDRESS</label>
+        @Html.TextBoxFor(c => c.MAIL, new { @class = "form-control" })
+        <br />
+        <label>TELEPHONE</label>
+        @Html.TextBoxFor(c => c.TELEPHONE, new { @class = "form-control" })
+        <br />
+        <label>SCHOOL</label>
+        @Html.TextBoxFor(c => c.SCHOOL, new { @class = "form-control" })
+        <br />
+        <label>IMAGE</label>
+        @Html.TextBoxFor(c => c.IMAGE, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}

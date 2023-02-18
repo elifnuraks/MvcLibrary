@@ -1,0 +1,112 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Members
+
+@using (Html.BeginForm("Index", "Panel", FormMethod.Post))
+
+{
+
+    <form class="form-horizontal">
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.NAME, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Surname</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.SURNAME, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">User Name</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.USERNAME, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Password</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.PASSWORD, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Image</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.IMAGE, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">School</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.SCHOOL, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <div class="checkbox">
+
+                    <label>
+
+                        <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <button type="submit" class="btn btn-danger">Update</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+}
+

@@ -1,0 +1,23 @@
+﻿@model MvcLibrary.Models.Entity.tbl_Categories
+@{
+    ViewBag.Title = "CategoryBring";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.ID)
+        @Html.TextBoxFor(c => c.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(c=>c.NAME)*@
+        <label>CATEGORY NAME</label>
+        @Html.TextBoxFor(c => c.NAME, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+

@@ -1,0 +1,26 @@
+﻿
+@model MvcLibrary.Models.Entity.tbl_Announcement
+
+@{
+    ViewBag.Title = "NewAnnouncement";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Announcement Category</label>
+        @Html.TextBoxFor(x => x.CATEGORY, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Announcement Content</label>
+        @Html.TextBoxFor(x => x.CONTENTS, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Announcement Date</label>
+        @Html.TextBoxFor(x => x.DATE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">Add Announcement</button>
+    </div>
+</form>
